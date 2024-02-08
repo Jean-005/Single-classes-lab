@@ -8,6 +8,8 @@ public class BankAccount {
     String accountNumber;
     int balance;
 
+//     Adding Getters and Setters
+
     public String getFirstName() {
         return firstName;
     }
@@ -47,6 +49,29 @@ public class BankAccount {
     public void setBalance(int balance) {
         this.balance = balance;
     }
-    
 
+
+// Deposit
+    public void deposit (int amount) {
+        balance += amount;
+
+    }
+
+//    Withdrawal
+
+    public void withdrawal (int amount) {
+        if (amount <= balance) {
+            balance -= amount;
+        } else {
+            System.out.println("Insufficient funds");
+        }
+    }
+//        Interest Calculation
+        public void addInterest(int interestRate) {
+            int interest = balance * interestRate;
+            balance += interest;
+
+        }
+
+    
 }
